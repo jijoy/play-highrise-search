@@ -1,0 +1,42 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(contacts: java.util.List[models.Contact])
+
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+<html>
+    <head>
+        <title>Sample App</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <!-- <script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery-1.7.1.js")"></script> -->
+    </head>
+    <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				@if(contacts != null){
+				<table class="table table-stripped">
+					<thead>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Company Name</th>
+					</thead>
+					@for(contact <- contacts) {
+			  			<tr>
+			  				<td>@contact.firstName</td>
+			  				<td>@contact.familyName</td>
+			  				<td>@contact.companyName</td>
+			  			</tr>
+					}
+				</table>
+				}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(message: String)
+
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+<html>
+    <head>
+        <title>Sample App</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <!-- <script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery-1.7.1.js")"></script> -->
+    </head>
+    <body>
+	<div class="container">
+		<div class="row" style="height:30%;"></div>
+		<div class="row">
+			<div class="col-md-10">	
+				<form method="post" action="/">
+				  <div class="form-group">
+				    <label for="tags">Tags</label>
+				    <input type="text" class="form-control" id="tags" placeholder="Tags" name="tags">
+				  </div>
+				
+				  <button type="submit" class="btn btn-default">Search</button>
+				</form>			
+			
+			</div>
+		</div>
+	</div>
+	</body>
+</html>
+
